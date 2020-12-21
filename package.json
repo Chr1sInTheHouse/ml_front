@@ -1,0 +1,21 @@
+{
+  "name": "ml_front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.3",
+    "@nuxtjs/proxy": "^2.0.1",
+    "aos": "^3.0.0-beta.6",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "nuxt": "^2.14.6",
+    "vue-scrollto": "^2.20.0"
+  },
+  "devDependencies": {}
+}
