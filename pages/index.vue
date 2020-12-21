@@ -107,25 +107,25 @@ export default {
       this.image = img.image;
     },
     submitUpload() {
-      result = this.$refs.upload.submit();
-      this.power[0] = result["hp"];
-      this.power[1] = result["pa"];
-      this.power[2] = result["ma"];
-      this.power[3] = result["sp"];
-      this.power[4] = result["cr"];
-      let best = 0;
-      for(let i=0; i<5; i++){
-        if(power[i]>best){
-          best = power[i];
-          this.job_idx = i;
-          this.level_idx = Math.floor(best/2);
-        }
-      }
+      this.$refs.upload.submit();
     },
     clog(file) {
       console.log(file);
 
       this.url = file.url;
+      this.power[0] = file.response["hp"];
+      this.power[1] = file.response["pa"];
+      this.power[2] = file.response["ma"];
+      this.power[3] = file.response["sp"];
+      this.power[4] = file.response["cr"];
+      let best = 0;
+      for(let i=0; i<5; i++){
+        if(this.power[i]>best){
+          best = this.power[i];
+          this.job_idx = i;
+          this.level_idx = Math.floor(best/2);
+        }
+      }
     },
   },
 };
