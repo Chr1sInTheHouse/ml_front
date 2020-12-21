@@ -32,14 +32,10 @@ export default {
     };
   },
   methods: {
-    async getImg() {
-      img = await this.$axios.$get(
-        "https://subjective-cp.herokuapp.com/request_image/name/" + this.rater
+    async submitUpload() {
+      img = await this.$axios.$post(
+        "/predict"
       );
-      this.image = img.image;
-    },
-    submitUpload() {
-      this.$refs.upload.submit();
     },
     clog(file) {
       console.log(file);
