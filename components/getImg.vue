@@ -43,6 +43,7 @@ export default {
     },
     clog(file) {
       console.log(file);
+
       this.url = file.url;
     },
   },
