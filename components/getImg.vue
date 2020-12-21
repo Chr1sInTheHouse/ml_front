@@ -2,7 +2,7 @@
   <div class="con">
     <el-upload
       ref="upload"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="/predict"
       list-type="picture-card"
       :auto-upload="false"
       :limit="1"
@@ -32,10 +32,14 @@ export default {
     };
   },
   methods: {
-    async submitUpload() {
-      img = await this.$axios.$post(
-        "/predict"
+    async getImg() {
+      img = await this.$axios.$get(
+        "https://subjective-cp.herokuapp.com/request_image/name/" + this.rater
       );
+      this.image = img.image;
+    },
+    submitUpload() {
+      this.$refs.upload.submit();
     },
     clog(file) {
       console.log(file);
