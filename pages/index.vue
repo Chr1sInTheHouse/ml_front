@@ -117,7 +117,8 @@ export default {
         this.$notify({
           title: 'Success',
           message: 'Scroll down to check the result.',
-          type: 'success'
+          type: 'success',
+          duration: 0
         });
         this.power[0] = file.response["hp"];
         this.power[1] = file.response["pa"];
