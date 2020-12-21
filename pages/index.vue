@@ -113,17 +113,19 @@ export default {
       console.log(file);
 
       this.url = file.url;
-      this.power[0] = file.response["hp"];
-      this.power[1] = file.response["pa"];
-      this.power[2] = file.response["ma"];
-      this.power[3] = file.response["sp"];
-      this.power[4] = file.response["cr"];
-      let best = 0;
-      for(let i=0; i<5; i++){
-        if(this.power[i]>best){
-          best = this.power[i];
-          this.job_idx = i;
-          this.level_idx = Math.floor(best/2);
+      if(file.hasOwnProperty('response')){
+        this.power[0] = file.response["hp"];
+        this.power[1] = file.response["pa"];
+        this.power[2] = file.response["ma"];
+        this.power[3] = file.response["sp"];
+        this.power[4] = file.response["cr"];
+        let best = 0;
+        for(let i=0; i<5; i++){
+          if(this.power[i]>best){
+            best = this.power[i];
+            this.job_idx = i;
+            this.level_idx = Math.floor(best/2);
+          }
         }
       }
     },
