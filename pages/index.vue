@@ -114,6 +114,11 @@ export default {
 
       this.url = file.url;
       if(file.hasOwnProperty('response')){
+        this.$notify({
+          title: 'Success',
+          message: 'Scroll down to check the result.',
+          type: 'success'
+        });
         this.power[0] = file.response["hp"];
         this.power[1] = file.response["pa"];
         this.power[2] = file.response["ma"];
